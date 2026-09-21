@@ -1,0 +1,67 @@
+# SHA-256 of Phase 4 artifacts -- regenerated 2026-09-17.
+# Windows paths relative to the repo root; the /home/lineage paths belong to WSL.
+# Phase status: PHASE_4_RECOVERY_OBJECTIVE_MET (Android 10 recovery validated on hardware, V21).
+#
+# WSL NOTE: the original PRODUCT_OUT (boot.img, system.img, dt.img, zImage) used in the
+# initial offline gate is NO longer present; out/ was regenerated for the recovery builds.
+# Its historical hashes are in this document's history and in RESTORE-PLAN.md.
+# The only current WSL artifact is the tested base kernel (V10).
+
+## Tested base kernel (WSL)
+55084029bccc464a505bd1569215c39cea3b66f3393749ec36280de6d72df902  /home/lineage/android/kernel-v10-gcc48-3.10.108-out/arch/arm/boot/Image
+
+## Recovery images (results/fase-4) -- all DO-NOT-FLASH
+bf99e219db1df8343008f9551df0400550b9ff91f126a931bea96e15fdb6ea80  results/fase-4/recovery-zimage-candidate-DO-NOT-FLASH.img
+32217cc6ce717cf4c914cc27f3b4edb3dbecb080aafe027d0d975c7849eb31ec  results/fase-4/recovery-imagekernel-diagnostic-v4-DO-NOT-FLASH.img
+e54137c306e3e24823db388e13ddf5b37c29de753f8d13991009dd2280d9c6b2  results/fase-4/recovery-stock-roundtrip-v5-DO-NOT-FLASH.img
+cbec7c4a36bb5f665524ae9417439ea59eff9c8a8b74d959d32ed3ea8046a3b4  results/fase-4/recovery-lzma-kernel-v6-DO-NOT-FLASH.img
+02f6fe5bb42516945b0283155198a69238f1a416beb01b254d6ae0bda1afbed9  results/fase-4/recovery-kernel-isolation-v7-DO-NOT-FLASH.img
+a021d3e4ffc511cc36701d822b81f9cab4aa73d41cd8e92d596109930dccbd51  results/fase-4/recovery-kernel-3.10.65-isolation-v8-DO-NOT-FLASH.img
+ea3c9499c8c6e16a04f7198bc0ab9545469a79ec80436a1f9135b370e128d17e  results/fase-4/recovery-kernel-3.10.65-gcc48-v9-DO-NOT-FLASH.img
+1948945c17360ce7cf1bad6df2b559ba376a8fa45ff5b2e86bd5559207a4dcf8  results/fase-4/recovery-kernel-3.10.108-gcc48-v10-DO-NOT-FLASH.img
+049dcd4399a18eab809574da3de834ad8ffdae99063bcea8455c297ee4037324  results/fase-4/recovery-android10-gcc48-v11-DO-NOT-FLASH.img
+6979a6ddb89e58767f96de3572d6686059f7ab83ec32ee0846bd31250b23c8c8  results/fase-4/recovery-stock-ramdisk-lzma-v12-DO-NOT-FLASH.img
+e0f597e545fdf0e2590a1d60750a67508db1bcba61efc374faeec261879de3d2  results/fase-4/recovery-android10-diagnostic-v13-DO-NOT-FLASH.img
+8878ad8ae1e355c7a7c09ae34d839af3ce4fe8026b0cbcf61e602de8191ab110  results/fase-4/recovery-android10-legacy-mmap-v14-DO-NOT-FLASH.img
+c9265dc96ffc762fe3934345550cde5bd6d5487c03b342e1102e367fff6443e2  results/fase-4/recovery-android10-usb-ui-v15-DO-NOT-FLASH.img
+a7f149a255afa17c5ddbc0360c5f440f73a99c1830ce8f9dba05bcf2900d5433  results/fase-4/recovery-android10-display-adb-v16-DO-NOT-FLASH.img
+669a2ad0a5cf63c1ec81bb1b7d285e2c931b2738fec1af24efd148f0b3f5d2ee  results/fase-4/recovery-android10-adbd-diagnostic-v17-DO-NOT-FLASH.img
+0394f802f19a0d25610d9a2baa34c6e321cd71dc8b8aa9e678f806ff55c7132f  results/fase-4/recovery-android10-adbd-tmp-diagnostic-v18-DO-NOT-FLASH.img
+b23e3c20467e788457cf5a9ee25efcc8b8fc56c2d5a22c17614cc56f96cf6eff  results/fase-4/recovery-android10-live-root-diagnostic-v19-DO-NOT-FLASH.img
+4448945ee8ec9adc7bdcbeddaacdd9ccb132e44b6b557634150d13ebcc76bebf  results/fase-4/recovery-android10-legacy-usb-v20-DO-NOT-FLASH.img
+7575f36d8bb0d7d271fae8d5226ec5fd35bc057f76b0093ecbdeda25bf3c3bc8  results/fase-4/recovery-android10-clean-candidate-v21-DO-NOT-FLASH.img
+
+## Odin packages (sm-t280-phase4/packages)
+5e2be6ff04e0962fab96f6a88e420b9ecaaee28024a445fec380ddcefb18b618  sm-t280-phase4/packages/SM-T280-AQJ1-STOCK-RECOVERY-RESTORE-v1.tar.md5
+c0f40b8fe247145db2a450ebe0bebb2378fe0663bdc4924e98159ba132ced735  sm-t280-phase4/packages/SM-T280-AQJ1-STOCK-RECOVERY-RESTORE-v2.tar.md5
+0109b87e22a4c06549adca103d887346dc943a309c968f5082ef85dea5a85283  sm-t280-phase4/packages/SM-T280-recovery-zimage-PHASE4-DO-NOT-FLASH.tar.md5
+6fc37188491074d726681a6a1fa32f26aeb34c39499edc925b1b467733964314  sm-t280-phase4/packages/SM-T280-recovery-zimage-PHASE4-v2-DO-NOT-FLASH.tar.md5
+359d1e99d4a81aa3c4b96718af97a7d1506f0096510890108c148806fb96fdad  sm-t280-phase4/packages/SM-T280-recovery-zimage-PHASE4-v3-DO-NOT-FLASH.tar.md5
+185d15868ae72eed8a1fd0d6a64e69df49716685fa9aa5d008d7309175b92c31  sm-t280-phase4/packages/SM-T280-recovery-imagekernel-PHASE4-v4-DO-NOT-FLASH.tar.md5
+14478cd53b97f9833f56e5486e3fb11f77ab344f97208863a698d05f2f549600  sm-t280-phase4/packages/SM-T280-recovery-stock-roundtrip-PHASE4-v5-DO-NOT-FLASH.tar.md5
+ae5e4914e164c43e89b5aa5b31f998992f5a511d115a4a05968eae056a4c45a1  sm-t280-phase4/packages/SM-T280-recovery-lzma-kernel-PHASE4-v6-DO-NOT-FLASH.tar.md5
+cc5e3d4ffa917c7fadb440c8edc8e20bccdd16038353c5c466fcaaab3a6645fb  sm-t280-phase4/packages/SM-T280-recovery-kernel-isolation-PHASE4-v7-DO-NOT-FLASH.tar.md5
+9c330c933ab8e38761dc71d09989aab07162a3b78ecd0b70a69c2906cc45bb13  sm-t280-phase4/packages/SM-T280-recovery-kernel-3.10.65-PHASE4-v8-DO-NOT-FLASH.tar.md5
+47c0bf7547646fb3a5479f0f216aa4aea74effa86d5eaf578a7b6e1f3d2efcc2  sm-t280-phase4/packages/SM-T280-recovery-kernel-3.10.65-gcc48-PHASE4-v9-DO-NOT-FLASH.tar.md5
+9bc79d954e6419b97fe4a613803bcc011645d6ce9989d36885c69808830c5419  sm-t280-phase4/packages/SM-T280-recovery-kernel-3.10.108-gcc48-PHASE4-v10-DO-NOT-FLASH.tar.md5
+a3392fcfbede00c4cc7980199511bef20a34ed24ece8b8e5e1ef77bc600186d0  sm-t280-phase4/packages/SM-T280-recovery-android10-gcc48-PHASE4-v11-DO-NOT-FLASH.tar.md5
+751ea3998c6d871d447aab91bf75eb014abca7fdde9d60f53fafbee7420585aa  sm-t280-phase4/packages/SM-T280-recovery-stock-ramdisk-lzma-PHASE4-v12-DO-NOT-FLASH.tar.md5
+9089f4d218e03613f3d0e2174f5815d1ad3afda9e543ba14d7df1c51deb41d18  sm-t280-phase4/packages/SM-T280-recovery-android10-diagnostic-PHASE4-v13-DO-NOT-FLASH.tar.md5
+8fe4295fa8c7a8e74468eb75b4effc4b466194744322e7958c110624b59ad005  sm-t280-phase4/packages/SM-T280-recovery-android10-legacy-mmap-PHASE4-v14-DO-NOT-FLASH.tar.md5
+1fdafb2aa5cc3a1af8eb850d88ccd4a1d8985d6e019661369515997f46b35b42  sm-t280-phase4/packages/SM-T280-recovery-android10-usb-ui-PHASE4-v15-DO-NOT-FLASH.tar.md5
+c3eeeb06506c1e8c471842a5098fb86723a0d11962e4cfbc1affdcd287692d8f  sm-t280-phase4/packages/SM-T280-recovery-android10-display-adb-PHASE4-v16-DO-NOT-FLASH.tar.md5
+b99a9e7e3d24b08a5d9a931e0ef59b2bca5a19016e5780e3db600abbc3903bfe  sm-t280-phase4/packages/SM-T280-recovery-android10-adbd-diagnostic-PHASE4-v17-DO-NOT-FLASH.tar.md5
+bd2ae2ca0bb046bd58e7956cc1b1e289ed81ee391668bdbc2b4a4d45d3bedd56  sm-t280-phase4/packages/SM-T280-recovery-android10-adbd-tmp-diagnostic-PHASE4-v18-DO-NOT-FLASH.tar.md5
+2d2c9724a2a3228cba31f56fa74ec43aeffa38541f91772fc202866906388103  sm-t280-phase4/packages/SM-T280-recovery-android10-live-root-diagnostic-PHASE4-v19-DO-NOT-FLASH.tar.md5
+c8ff4adcbb756c4aa6385bae40c49ffa74002609f6483e1d9f011df720cea986  sm-t280-phase4/packages/SM-T280-recovery-android10-legacy-usb-PHASE4-v20-DO-NOT-FLASH.tar.md5
+970d11f9582de738435087c54ca3270c41f6e01a7969a85ce1c6d06110bd7a4b  sm-t280-phase4/packages/SM-T280-recovery-android10-clean-candidate-PHASE4-v21-DO-NOT-FLASH.tar.md5
+
+## V21 runtime evidence (results/fase-4/v21-runtime)
+3c46e312c237806021f64141d1628a6873261891ada1558b3a0dbdcd693668c7  results/fase-4/v21-runtime/adb-id.txt
+c891931cc09e0a8deb11c05ba5142c30194f77457da3ad155df21e1e52bc985f  results/fase-4/v21-runtime/dmesg.txt
+c6b8471f5bd0d1f26752bc54b9c4e65835c34ba37c5dfeb89789880ccf5f647b  results/fase-4/v21-runtime/getprop.txt
+26f35b39b6796a5ec9782fdd5363d468dd12fd034b79b0c6e08f25168f8a7c9d  results/fase-4/v21-runtime/input-devices.txt
+f5ec25d058d27600757a3e4381548582115e2c3d9c9f01338f5317692413427a  results/fase-4/v21-runtime/partitions-by-name.txt
+10dcf64e19dae58ee47bfedab1051c6b597f27f4c1d0fbea417cf83f65538ba2  results/fase-4/v21-runtime/proc-mounts.txt
+866f5f76128467d22449f4690ec7b38112d1d912d89127f80e36f89955ec2775  results/fase-4/v21-runtime/recovery.log
+c521cc74068a11ca8262d54ccb06f3e3548aa131c1def4039f7b45f2d2d506ac  results/fase-4/v21-runtime/uname.txt

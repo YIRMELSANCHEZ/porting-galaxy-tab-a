@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SwiftAngle: paquete de sistema que Android 10 reconoce como "ANGLE" (GraphicsEnvironment
+     busca UNA actividad de sistema con la accion android.app.action.ANGLE_FOR_ANDROID y usa el
+     nativeLibraryDir del paquete para cargar libEGL_angle.so / libGLESv2_angle.so /
+     libGLESv1_CM_angle.so). Aqui esas libs son SwiftShader (OpenGL ES 3.0 por CPU) para
+     armeabi-v7a. Se activa solo para las apps listadas en Settings.Global
+     angle_gl_driver_selection_pkgs / angle_gl_driver_selection_values=angle. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.lineageos.gtexswifi.swiftangle"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="29" android:targetSdkVersion="29" />
+
+    <!-- V87: restaura automaticamente el opt-in por app tras un borrado de /data. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+
+    <application
+        android:label="SwiftAngle (GLES 3.0 por software)"
+        android:hasCode="true">
+        <activity
+            android:name=".AngleActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.app.action.ANGLE_FOR_ANDROID" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <receiver
+            android:name=".BootCompletedReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "description": "Default: no usar ANGLE salvo opt-in por app (angle_gl_driver_selection_*)",
+      "choice": "native"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- V94b: media_codecs.xml para gtexswifi con el decodificador H.264 por HARDWARE de Spreadtrum
+     (OMX.sprd.h264.decoder, VSP). V55 lo habia retirado por un crash en SprdOMXPlugin; la causa real
+     era doble: el servicio OMX (usuario mediacodec) no podia abrir /dev/sprd_vsp (0660 system:audio)
+     y el plugin hacia dlclose antes de liberar el sp<> del componente. Verificado en vivo 2026-09-21:
+     omx_tests OK y la app objetivo reproduce con el decodificador HW (~1 % de CPU en el decodificador).
+     El resto de codecs (MPEG-4/VP8 de Spreadtrum, audio) siguen por software: no se han probado. -->
+<MediaCodecs>
+    <Settings>
+        <Setting name="max-video-encoder-input-buffers" value="18" />
+    </Settings>
+    <Decoders>
+        <MediaCodec name="OMX.sprd.h264.decoder" type="video/avc" >
+            <Quirk name="requires-allocate-on-input-ports" />
+            <Quirk name="requires-allocate-on-output-ports" />
+            <Limit name="size" min="64x64" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" range="1-244800" />
+            <Limit name="bitrate" range="1-20000000" />
+            <Feature name="adaptive-playback" />
+        </MediaCodec>
+    </Decoders>
+    <Include href="media_codecs_google_audio.xml" />
+    <Include href="media_codecs_google_telephony.xml" />
+    <Include href="media_codecs_google_video.xml" />
+</MediaCodecs>

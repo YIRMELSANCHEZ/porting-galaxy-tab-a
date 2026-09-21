@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- V55: media_codecs.xml SOLO SOFTWARE para gtexswifi.
+     Los codecs de video por HARDWARE de Spreadtrum (OMX.sprd.* via SprdOMXPlugin) son
+     blobs de Android 5.1 (GCC 4.9 ene-2015), ABI incompatible con el stagefright de
+     Android 10 -> crashean en makeComponentInstance (RefBase::decStrong). Se ELIMINAN del
+     catalogo: sin entradas OMX.sprd.*, el framework nunca invoca SprdOMXPlugin -> no crash.
+     El video/audio se decodifica por software (OMX.google.* / c2.android.* de los includes
+     de Google/AOSP). Tambien se quita el <Include media_codecs_ffmpeg.xml> (no existe). -->
+<MediaCodecs>
+    <Settings>
+        <Setting name="max-video-encoder-input-buffers" value="18" />
+    </Settings>
+    <Include href="media_codecs_google_audio.xml" />
+    <Include href="media_codecs_google_telephony.xml" />
+    <Include href="media_codecs_google_video.xml" />
+</MediaCodecs>

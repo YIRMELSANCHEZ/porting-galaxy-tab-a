@@ -1,0 +1,63 @@
+# This repository versions the reproducible knowledge: documentation (docs/, results/*.md) and
+# scripts (sm-t280-phase*/scripts/). Everything heavy, binary, generated or sensitive stays out.
+
+# --- binaries and heavy artifacts ---
+*.tar.md5
+*.tar
+*.img
+*.apk
+*.so
+*.bin
+*.zip
+*.gz
+*.lz4
+*.dtb
+*.dat
+*.png
+*.jpg
+
+# --- stock firmware, packages, apps, tools and blobs ---
+sm-t280-phase*/stock/
+sm-t280-phase*/packages/
+sm-t280-phase*/apps/
+sm-t280-phase*/tools/
+**/proprietary/
+**/proprietary-files*/
+
+# --- raw ADB captures: may contain sensitive data (device MACs/serials, SSIDs, tokens in logcat) ---
+sm-t280-phase*/raw/
+**/logcat*.txt
+**/*.logcat
+**/*secret*
+**/*oauth*
+**/*token*
+
+# --- raw device diagnostic captures (dumpsys, last_kmsg, runtime evidence, kernel audit) ---
+# They hold device MACs/serials and home-network data, so they are excluded from this public repo.
+results/**/*.txt
+!results/**/*-TAR-CONTENTS.txt
+results/fase-4/kernel-audit/
+
+# --- cloned source trees (kernel, vendor, etc.) ---
+sm-t280-phase*/sources/
+**/.repo/
+
+# --- build outputs and temporaries ---
+out/
+**/__pycache__/
+*.pyc
+*.log
+*.tmp
+
+# --- what IS versioned (exceptions to the patterns above) ---
+!README.md
+!.gitignore
+!docs/**
+!results/**/*.md
+!sm-t280-phase6/scripts/**/*.py
+!sm-t280-phase6/scripts/**/*.sh
+!sm-t280-phase6/scripts/**/*.xml
+
+# phases with their own git repo and only binaries/artifacts: the useful documentation is in results/ and docs/
+sm-t280-phase3/
+sm-t280-phase4/
