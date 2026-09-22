@@ -1,5 +1,18 @@
 # LineageOS 17.1 (Android 10) port for the Samsung Galaxy Tab A 7.0 2016 (SM-T280)
 
+![License](https://img.shields.io/badge/license-MIT-yellow)
+![Android](https://img.shields.io/badge/Android-10-3DDC84?logo=android&logoColor=white)
+![LineageOS](https://img.shields.io/badge/LineageOS-17.1-167C80)
+![Device](https://img.shields.io/badge/device-SM--T280%20gtexswifi-1f6feb)
+![SoC](https://img.shields.io/badge/SoC-Spreadtrum%20SC8830-lightgrey)
+![GPU](https://img.shields.io/badge/GPU-Mali--400%20GLES2-e05d44)
+![Status](https://img.shields.io/badge/status-discontinued%20%C2%B7%20documented-orange)
+![Last commit](https://img.shields.io/github/last-commit/YIRMELSANCHEZ/porting-galaxy-tab-a)
+![Top language](https://img.shields.io/github/languages/top/YIRMELSANCHEZ/porting-galaxy-tab-a)
+![Repo size](https://img.shields.io/github/repo-size/YIRMELSANCHEZ/porting-galaxy-tab-a)
+
+> *Documented, reproducible port of Android 10 to a 2016 Spreadtrum tablet Samsung left on Android 5.1.1 — boots to the launcher with almost all hardware working.*
+
 Full record of the Android 10 port for the **Samsung Galaxy Tab A 7.0 2016 (SM-T280, `gtexswifi`)**,
 a Spreadtrum SC8830 device (4x Cortex-A7 1.3 GHz, Mali-400 GLES 2.0 GPU, 1.5 GB RAM, kernel 3.10) that
 Samsung left on Android 5.1.1. Initial goal: run an educational app that requires GLES 3.0. Final goal
