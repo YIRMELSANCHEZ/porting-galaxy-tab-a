@@ -7,8 +7,8 @@ root=${1:?Usage: prepare-signed-system-odin-candidate.sh ANDROID_ROOT WORKSPACE}
 workspace=${2:?Usage: prepare-signed-system-odin-candidate.sh ANDROID_ROOT WORKSPACE}
 device="$root/device/samsung/gtexswifi"
 boot="$root/out/target/product/gtexswifi/boot.img"
-source_system="$workspace/results/fase-5/system-raw-shrunk-odin-v3.img"
-output_system="$workspace/results/fase-5/system-signed-odin-v4.img"
+source_system="$workspace/results/phase-5/system-raw-shrunk-odin-v3.img"
+output_system="$workspace/results/phase-5/system-signed-odin-v4.img"
 package="$workspace/sm-t280-phase5/packages/SM-T280-system-android10-signed-ext4-PHASE5-v4-DO-NOT-FLASH.tar.md5"
 work=$(mktemp -d)
 trap 'rm -rf -- "$work"' EXIT
@@ -28,8 +28,8 @@ cp "$work/system.img" "$output_system"
 
 bash "$workspace/sm-t280-phase5/scripts/package-system-for-odin.sh" \
   "$boot" "$output_system" "$package"
-tar --list --file "$package" | sed '/^$/d' > "$workspace/results/fase-5/SIGNED-SYSTEM-V4-TAR-CONTENTS.txt"
-test "$(cat "$workspace/results/fase-5/SIGNED-SYSTEM-V4-TAR-CONTENTS.txt")" = $'boot.img\nsystem.img'
+tar --list --file "$package" | sed '/^$/d' > "$workspace/results/phase-5/SIGNED-SYSTEM-V4-TAR-CONTENTS.txt"
+test "$(cat "$workspace/results/phase-5/SIGNED-SYSTEM-V4-TAR-CONTENTS.txt")" = $'boot.img\nsystem.img'
 
 printf 'signed_system_size=%s system_margin=%s\n' "$signed_size" "$((2147483648 - signed_size))"
 printf 'signed_system_sha256=%s\n' "$(sha256sum "$output_system" | awk '{print $1}')"

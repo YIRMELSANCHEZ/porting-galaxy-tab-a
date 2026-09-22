@@ -5,7 +5,7 @@ root=${1:?Usage: prepare-v42-package.sh ANDROID_ROOT WORKSPACE}
 workspace=${2:?Usage: prepare-v42-package.sh ANDROID_ROOT WORKSPACE}
 boot="$root/out/target/product/gtexswifi/boot.img"
 source_system="$root/out/target/product/gtexswifi/system.img"
-converted="$workspace/results/fase-5/system-legacy-sparse-odin-v55.img"
+converted="$workspace/results/phase-5/system-legacy-sparse-odin-v55.img"
 package="$workspace/sm-t280-phase6/packages/SM-T280-android10-usability-PHASE6-v55-DO-NOT-FLASH.tar.md5"
 
 python3 "$workspace/sm-t280-phase6/scripts/legacy_sparse.py" "$source_system" "$converted"

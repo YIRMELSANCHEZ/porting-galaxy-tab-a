@@ -45,7 +45,7 @@ rm -rf "$W"
 if [ "$QUICK" = "1" ]; then echo "QUICK: without packaging"; exit 0; fi
 echo "=== 4) package (boot V75 + system V80) ==="
 sha256sum "$OUT/boot.img" | cut -c1-16 | sed 's/^/boot.img (V75 fe89ef3181bfecea): /'
-python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/fase-5/system-legacy-sparse-odin-v80.img"
+python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/phase-5/system-legacy-sparse-odin-v80.img"
 bash "$S/package-system-for-odin.sh" "$OUT/boot.img" \
-  "$WIN/results/fase-5/system-legacy-sparse-odin-v80.img" \
+  "$WIN/results/phase-5/system-legacy-sparse-odin-v80.img" \
   "$WIN/sm-t280-phase6/packages/SM-T280-android10-swiftangle-PHASE6-v80-DO-NOT-FLASH.tar.md5"

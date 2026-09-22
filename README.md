@@ -19,7 +19,7 @@ Samsung left on Android 5.1.1. Initial goal: run an educational app that require
 after the evidence: leave a usable general-purpose tablet.
 
 **Status: migration stopped on 2026-09-21 by user decision.** Summary of why and of what was achieved
-below; the detail and the pending items in [results/ESTADO-FINAL.md](results/ESTADO-FINAL.md).
+below; the detail and the pending items in [results/FINAL-STATE.md](results/FINAL-STATE.md).
 
 ## What was achieved
 
@@ -40,16 +40,16 @@ Android 10 boots stably on a 2016 device with almost all the hardware working:
 
 - **Camera preview**: the HAL works, but the graphics layer (Spreadtrum gralloc on Android 10) rejects
   the preview buffers. It affects every camera app. It is a gralloc porting bug, not a HAL bug. See
-  [results/fase-6/CAMERA-V98.md](results/fase-6/CAMERA-V98.md).
+  [results/phase-6/CAMERA-V98.md](results/phase-6/CAMERA-V98.md).
 - **Heavy 3D performance**: the Mali-400 is GLES 2.0 in silicon; apps that require GLES 3.0 run on the
   CPU (SwiftShader), at a few fps. It is a physical limit, not a software one.
 
 ## How it is organized
 
 - **`docs/`** -- procedures and the phase plan (reusable, not specific to this tablet).
-- **`results/`** -- measurements, reports and findings per phase (`fase-1` ... `fase-6`) plus the closeout.
-  - `results/ESTADO-FINAL.md` -- final state, decision and pending items.
-  - `results/fase-6/` -- the long phase: graphics/video bring-up, SwiftAngle, camera, microG, the app.
+- **`results/`** -- measurements, reports and findings per phase (`phase-1` ... `phase-6`) plus the closeout.
+  - `results/FINAL-STATE.md` -- final state, decision and pending items.
+  - `results/phase-6/` -- the long phase: graphics/video bring-up, SwiftAngle, camera, microG, the app.
 - **`sm-t280-phase6/scripts/`** -- all the patches (`apply-vNN-*.py`) and the build/packaging scripts.
 - **`sm-t280-phase4/stock/`** -- original Samsung firmware (T280XXU0AQJ1) for the factory restore.
 
@@ -62,10 +62,10 @@ Environment: WSL Ubuntu 22.04, LineageOS 17.1 tree at `/home/lineage/android/lin
 `device/samsung/gtexswifi`. The final package is produced by `sm-t280-phase6/scripts/build-v96-final.sh`
 (it applies the chain `apply-v87` ... `apply-v99` on the tree and packages for Odin). Flashing: Odin AP,
 **Auto Reboot OFF, Re-Partition unchecked**, `boot` + `system` only. Detail and sha256 in
-[results/fase-6/BUILD-V96-FINAL.md](results/fase-6/BUILD-V96-FINAL.md).
+[results/phase-6/BUILD-V96-FINAL.md](results/phase-6/BUILD-V96-FINAL.md).
 
 ## Restoring the tablet to factory (original Android 5.1.1)
 
 The original firmware is in `sm-t280-phase4/stock/` (`AP/BL/CSC_...AQJ1...`). Full restore via Odin with
 BL + AP + CSC, which returns the original software and wipes the data. Procedure in
-[results/ESTADO-FINAL.md](results/ESTADO-FINAL.md#restore-to-factory).
+[results/FINAL-STATE.md](results/FINAL-STATE.md#restore-to-factory).

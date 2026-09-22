@@ -37,9 +37,9 @@ test -f "$APK" || { echo "V88_FAIL: SwiftAngle.apk"; exit 1; }
 echo "V88_STATIC_VERIFY_PASS"
 
 echo "=== Odin ==="
-python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/fase-5/system-legacy-sparse-odin-v88.img"
+python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/phase-5/system-legacy-sparse-odin-v88.img"
 bash "$S/package-system-for-odin.sh" "$OUT/boot.img" \
-  "$WIN/results/fase-5/system-legacy-sparse-odin-v88.img" "$ODIN"
+  "$WIN/results/phase-5/system-legacy-sparse-odin-v88.img" "$ODIN"
 bash "$S/verify-odin-boot-system-package.sh" "$ODIN"
 sha256sum "$ODIN"
 echo "V88_BUILD_AND_PACKAGE_PASS"

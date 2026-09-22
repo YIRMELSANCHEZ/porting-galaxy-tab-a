@@ -33,7 +33,7 @@ grep -q '^    user system' "$OUT/system/etc/init/wcnd.rc" && { echo "V72_REGRESS
 sha256sum "$OUT/boot.img" | cut -c1-16 | sed 's/^/boot.img (V75 fe89ef3181bfecea): /'
 
 echo "=== 3) package (boot V75 + system V78) ==="
-python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/fase-5/system-legacy-sparse-odin-v78.img"
+python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/phase-5/system-legacy-sparse-odin-v78.img"
 bash "$S/package-system-for-odin.sh" "$OUT/boot.img" \
-  "$WIN/results/fase-5/system-legacy-sparse-odin-v78.img" \
+  "$WIN/results/phase-5/system-legacy-sparse-odin-v78.img" \
   "$WIN/sm-t280-phase6/packages/SM-T280-android10-swiftangle-PHASE6-v78-DO-NOT-FLASH.tar.md5"

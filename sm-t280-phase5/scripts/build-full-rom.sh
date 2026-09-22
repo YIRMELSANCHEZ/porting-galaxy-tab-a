@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Fase 5.0 — full build of the LineageOS 17.1 ROM for gtexswifi.
+# Phase 5.0 — full build of the LineageOS 17.1 ROM for gtexswifi.
 # Reproducible: kernel in-tree (rev 95996f39350, = V10 probado) + GCC 4.8 via
 # KERNEL_TOOLCHAIN from BoardConfig. Does not interact with the tablet.
 set -o pipefail

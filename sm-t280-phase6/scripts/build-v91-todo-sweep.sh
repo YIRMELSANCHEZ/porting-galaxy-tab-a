@@ -27,7 +27,7 @@ lunch lineage_gtexswifi-userdebug >/dev/null
 
 echo "=== 1) wifi-service + libwifi-hal + MediaProvider ==="
 mka wifi-service libwifi-hal MediaProvider 2>&1 | grep -E 'error:|FAILED|build completed' | tail -8 | tee /tmp/v91-a.log
-grep -q 'build completed' /tmp/v91-a.log || { echo 'V91_FAIL: fase 1'; exit 1; }
+grep -q 'build completed' /tmp/v91-a.log || { echo 'V91_FAIL: phase 1'; exit 1; }
 
 echo "=== 2) SwiftShader ==="
 mka libEGL_swiftshader libGLESv2_swiftshader libGLESv1_CM_swiftshader 2>&1 | grep -E 'error:|FAILED|build completed' | tail -8 | tee /tmp/v91-b.log
@@ -53,8 +53,8 @@ test -f "$APK" || { echo 'V91_FAIL: SwiftAngle.apk'; exit 1; }
 echo 'V91_STATIC_VERIFY_PASS'
 
 echo "=== 5) Odin package ==="
-python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/fase-5/system-legacy-sparse-odin-v91.img"
-bash "$S/package-system-for-odin.sh" "$OUT/boot.img" "$WIN/results/fase-5/system-legacy-sparse-odin-v91.img" "$ODIN"
+python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/phase-5/system-legacy-sparse-odin-v91.img"
+bash "$S/package-system-for-odin.sh" "$OUT/boot.img" "$WIN/results/phase-5/system-legacy-sparse-odin-v91.img" "$ODIN"
 bash "$S/verify-odin-boot-system-package.sh" "$ODIN"
 sha256sum "$OUT/boot.img" "$OUT/system.img" "$ODIN"
 echo 'V91_BUILD_AND_PACKAGE_PASS'

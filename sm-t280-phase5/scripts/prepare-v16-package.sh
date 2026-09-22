@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Fase 5 V8 — packages the new boot.img (fstab in ramdisk) + legacy-sparse system.
+# Phase 5 V8 — packages the new boot.img (fstab in ramdisk) + legacy-sparse system.
 # The system did NOT change vs V5/V7; the deterministic legacy sparse is regenerated.
 set -euo pipefail
 
@@ -7,7 +7,7 @@ root=${1:?Usage: prepare-v8-package.sh ANDROID_ROOT WORKSPACE}
 workspace=${2:?Usage: prepare-v8-package.sh ANDROID_ROOT WORKSPACE}
 boot="$root/out/target/product/gtexswifi/boot.img"
 source_system="$root/out/target/product/gtexswifi/system.img"
-converted="$workspace/results/fase-5/system-legacy-sparse-odin-v16.img"
+converted="$workspace/results/phase-5/system-legacy-sparse-odin-v16.img"
 package="$workspace/sm-t280-phase5/packages/SM-T280-android10-postfsdata-PHASE5-v16-DO-NOT-FLASH.tar.md5"
 
 # 1) system.img (sparse AOSP) -> sparse legacy (file_hdr_sz=32, chunk_hdr_sz=16).

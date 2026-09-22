@@ -6,7 +6,7 @@ export MSYS_NO_PATHCONV=1 MSYS2_ARG_CONV_EXCL='*'
 repo="$(cd "$(dirname "$0")/../.." && pwd)"
 adb="$repo/sm-t280-phase1/tools/platform-tools/adb.exe"
 stamp="$(date +%Y%m%d-%H%M%S)"
-out="$repo/results/fase-6/v68-bootloop-$stamp"
+out="$repo/results/phase-6/v68-bootloop-$stamp"
 mkdir -p "$out"
 
 "$adb" devices -l >"$out/adb-devices.txt" 2>&1

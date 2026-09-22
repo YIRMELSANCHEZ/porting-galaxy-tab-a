@@ -5,7 +5,7 @@ root=${1:?Usage: prepare-v64-package.sh ANDROID_ROOT WORKSPACE}
 workspace=${2:?Usage: prepare-v64-package.sh ANDROID_ROOT WORKSPACE}
 boot="$root/out/target/product/gtexswifi/boot.img"
 source_system="$root/out/target/product/gtexswifi/system.img"
-converted="$workspace/results/fase-6/system-legacy-sparse-odin-v64.img"
+converted="$workspace/results/phase-6/system-legacy-sparse-odin-v64.img"
 package="$workspace/sm-t280-phase6/packages/SM-T280-android10-suspend-counter-PHASE6-v64-DO-NOT-FLASH.tar.md5"
 service="$root/out/target/product/gtexswifi/system/bin/hw/android.system.suspend@1.0-service"
 

@@ -29,5 +29,5 @@ sha256sum "$OUT/system.img" | cut -c1-16 | sed 's/^/system.img (should be 651e16
 
 echo "=== package (boot V75 + system V73) ==="
 bash "$S/package-system-for-odin.sh" "$OUT/boot.img" \
-  "$WIN/results/fase-5/system-legacy-sparse-odin-v73.img" \
+  "$WIN/results/phase-5/system-legacy-sparse-odin-v73.img" \
   "$WIN/sm-t280-phase6/packages/SM-T280-android10-binder-fda-PHASE6-v75-DO-NOT-FLASH.tar.md5"

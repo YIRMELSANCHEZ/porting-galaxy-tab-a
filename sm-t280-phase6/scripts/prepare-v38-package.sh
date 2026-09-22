@@ -7,7 +7,7 @@ root=${1:?Usage: prepare-v8-package.sh ANDROID_ROOT WORKSPACE}
 workspace=${2:?Usage: prepare-v8-package.sh ANDROID_ROOT WORKSPACE}
 boot="$root/out/target/product/gtexswifi/boot.img"
 source_system="$root/out/target/product/gtexswifi/system.img"
-converted="$workspace/results/fase-5/system-legacy-sparse-odin-v38.img"
+converted="$workspace/results/phase-5/system-legacy-sparse-odin-v38.img"
 package="$workspace/sm-t280-phase6/packages/SM-T280-android10-health-hal-PHASE6-v38-DO-NOT-FLASH.tar.md5"
 
 # 1) system.img (sparse AOSP) -> sparse legacy (file_hdr_sz=32, chunk_hdr_sz=16).

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Fase 5.1 — offline validation of boot.img + system.img of the full ROM.
+# Phase 5.1 — offline validation of boot.img + system.img of the full ROM.
 # Does not interact with the tablet. Exits != 0 if any check fails.
 set -euo pipefail
 

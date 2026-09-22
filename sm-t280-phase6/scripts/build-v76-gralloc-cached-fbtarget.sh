@@ -25,7 +25,7 @@ grep -q 'ro.bluetooth.skip_offload_probe=1' "$OUT/system/build.prop" && echo "V7
 grep -q '^    user system' "$OUT/system/etc/init/wcnd.rc" && { echo "V72_REGRESSION"; exit 1; } || echo "V72 wcnd ok"
 
 echo "=== package (boot V75 + system V76) ==="
-python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/fase-5/system-legacy-sparse-odin-v76.img"
+python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/phase-5/system-legacy-sparse-odin-v76.img"
 bash "$S/package-system-for-odin.sh" "$OUT/boot.img" \
-  "$WIN/results/fase-5/system-legacy-sparse-odin-v76.img" \
+  "$WIN/results/phase-5/system-legacy-sparse-odin-v76.img" \
   "$WIN/sm-t280-phase6/packages/SM-T280-android10-g1-binder-cachedfb-PHASE6-v76-DO-NOT-FLASH.tar.md5"

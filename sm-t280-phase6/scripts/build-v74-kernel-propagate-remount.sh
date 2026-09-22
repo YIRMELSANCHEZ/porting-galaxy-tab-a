@@ -27,7 +27,7 @@ grep -c "propagation_next" "$KO/fs/pnode.o" >/dev/null && echo "pnode.o contains
 echo "system.img unchanged: $BEFORE_SYS == $(sha256sum "$OUT/system.img" | cut -c1-16)"
 
 echo "=== package (boot V74 + system V73 legacy sparse already generated) ==="
-test -f "$WIN/results/fase-5/system-legacy-sparse-odin-v73.img" || { echo "MISSING system v73 sparse"; exit 1; }
+test -f "$WIN/results/phase-5/system-legacy-sparse-odin-v73.img" || { echo "MISSING system v73 sparse"; exit 1; }
 bash "$S/package-system-for-odin.sh" "$OUT/boot.img" \
-  "$WIN/results/fase-5/system-legacy-sparse-odin-v73.img" \
+  "$WIN/results/phase-5/system-legacy-sparse-odin-v73.img" \
   "$WIN/sm-t280-phase6/packages/SM-T280-android10-storage-remount-PHASE6-v74-DO-NOT-FLASH.tar.md5"

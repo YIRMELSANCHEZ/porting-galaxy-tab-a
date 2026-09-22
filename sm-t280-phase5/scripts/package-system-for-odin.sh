@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Fase 5.2 — packages boot.img + system.img into an AP tar.md5 for Odin.
+# Phase 5.2 — packages boot.img + system.img into an AP tar.md5 for Odin.
 # Odin matches by .img file name: boot.img -> KERNEL, system.img -> SYSTEM.
 # Does NOT include recovery, PIT, BL or CSC. Does not interact with the tablet.
 set -euo pipefail

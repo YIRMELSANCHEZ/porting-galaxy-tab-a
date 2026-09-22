@@ -77,9 +77,9 @@ rm -rf "$W"
 
 echo "=== 5) Odin package (boot V75 + system V87) ==="
 sha256sum "$OUT/boot.img" | sed 's/^/boot: /'
-python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/fase-5/system-legacy-sparse-odin-v87.img"
+python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/phase-5/system-legacy-sparse-odin-v87.img"
 bash "$S/package-system-for-odin.sh" "$OUT/boot.img" \
-  "$WIN/results/fase-5/system-legacy-sparse-odin-v87.img" "$ODIN"
+  "$WIN/results/phase-5/system-legacy-sparse-odin-v87.img" "$ODIN"
 bash "$S/verify-odin-boot-system-package.sh" "$ODIN"
 echo "V87_PACKAGE=$ODIN"
 sha256sum "$ODIN"

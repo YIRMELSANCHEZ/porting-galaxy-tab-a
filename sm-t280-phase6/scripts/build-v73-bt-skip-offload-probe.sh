@@ -21,7 +21,7 @@ grep -q '^    user system' "$OUT/system/etc/init/wcnd.rc" && { echo "V72_REGRESS
 echo "V73_STAGING_OK"
 
 echo "=== package ==="
-python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/fase-5/system-legacy-sparse-odin-v73.img"
+python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/phase-5/system-legacy-sparse-odin-v73.img"
 bash "$S/package-system-for-odin.sh" "$OUT/boot.img" \
-  "$WIN/results/fase-5/system-legacy-sparse-odin-v73.img" \
+  "$WIN/results/phase-5/system-legacy-sparse-odin-v73.img" \
   "$WIN/sm-t280-phase6/packages/SM-T280-android10-bt-skip-offload-PHASE6-v73-DO-NOT-FLASH.tar.md5"

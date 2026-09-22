@@ -65,12 +65,12 @@ echo "V90_STATIC_VERIFY_PASS"
 
 echo "=== 5) Odin package ==="
 python3 "$S/legacy_sparse.py" "$OUT/system.img" \
-  "$WIN/results/fase-5/system-legacy-sparse-odin-v90.img"
+  "$WIN/results/phase-5/system-legacy-sparse-odin-v90.img"
 bash "$S/package-system-for-odin.sh" "$OUT/boot.img" \
-  "$WIN/results/fase-5/system-legacy-sparse-odin-v90.img" "$ODIN"
+  "$WIN/results/phase-5/system-legacy-sparse-odin-v90.img" "$ODIN"
 bash "$S/verify-odin-boot-system-package.sh" "$ODIN"
 sha256sum "$OUT/boot.img" "$OUT/system.img" \
-  "$WIN/results/fase-5/system-legacy-sparse-odin-v90.img" \
+  "$WIN/results/phase-5/system-legacy-sparse-odin-v90.img" \
   "$OUT/system/vendor/lib/egl/libEGL_swiftshader.so" "$WIFI_JAR" "$APK" "$ODIN"
 echo "V90_PACKAGE=$ODIN"
 echo 'V90_BUILD_AND_PACKAGE_PASS'

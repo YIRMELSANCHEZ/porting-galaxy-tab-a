@@ -71,8 +71,8 @@ grep -q '^    user system' "$OUT/system/etc/init/wcnd.rc" && { echo 'V72_REGRESS
 echo 'V95_STATIC_VERIFY_PASS'
 
 echo "=== 4) Odin package ==="
-python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/fase-5/system-legacy-sparse-odin-v95.img"
-bash "$S/package-system-for-odin.sh" "$OUT/boot.img" "$WIN/results/fase-5/system-legacy-sparse-odin-v95.img" "$ODIN"
+python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/phase-5/system-legacy-sparse-odin-v95.img"
+bash "$S/package-system-for-odin.sh" "$OUT/boot.img" "$WIN/results/phase-5/system-legacy-sparse-odin-v95.img" "$ODIN"
 bash "$S/verify-odin-boot-system-package.sh" "$ODIN"
 sha256sum "$OUT/boot.img" "$OUT/system.img" "$ODIN"
 echo 'V95_BUILD_AND_PACKAGE_PASS'

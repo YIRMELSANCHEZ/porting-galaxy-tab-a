@@ -4,8 +4,8 @@ set -euo pipefail
 root=${1:?Usage: prepare-v62-package.sh ANDROID_ROOT WORKSPACE [SOURCE_SYSTEM]}
 workspace=${2:?Usage: prepare-v62-package.sh ANDROID_ROOT WORKSPACE [SOURCE_SYSTEM]}
 boot="$root/out/target/product/gtexswifi/boot.img"
-source_system=${3:-"$workspace/results/fase-6/system-standard-sparse-v62.img"}
-converted="$workspace/results/fase-6/system-legacy-sparse-odin-v62.img"
+source_system=${3:-"$workspace/results/phase-6/system-standard-sparse-v62.img"}
+converted="$workspace/results/phase-6/system-legacy-sparse-odin-v62.img"
 package="$workspace/sm-t280-phase6/packages/SM-T280-android10-power-button-PHASE6-v62-DO-NOT-FLASH.tar.md5"
 
 [[ "$(sha256sum "$boot" | awk '{print $1}')" == "4f8649fe853b5fbef7d4eb75aa766e2169775677ba91bb4504f089eae055973f" ]]

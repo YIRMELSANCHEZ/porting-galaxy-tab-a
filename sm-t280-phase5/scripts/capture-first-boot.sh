@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Fase 5.3 — diagnostic capture of the system first boot.
+# Phase 5.3 — diagnostic capture of the system first boot.
 # Runs from Windows (Git Bash) after flashing boot+system and booting.
 # Reads from the device only: no reboot, no write, no restore.
 set -uo pipefail
@@ -7,7 +7,7 @@ export MSYS_NO_PATHCONV=1 MSYS2_ARG_CONV_EXCL='*'
 
 REPO="$(cd "$(dirname "$0")/../.." && pwd)"
 ADB="$REPO/sm-t280-phase1/tools/platform-tools/adb.exe"
-OUT="$REPO/results/fase-5/first-boot-runtime"
+OUT="$REPO/results/phase-5/first-boot-runtime"
 mkdir -p "$OUT"
 WAIT=${1:-120}
 

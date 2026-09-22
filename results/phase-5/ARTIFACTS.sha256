@@ -1,0 +1,29 @@
+# SHA-256 of PHASE 5 artifacts (graphics) -- HISTORICAL.
+# * PHASE 5 CONSOLIDATED: V34 (visible animation). Chain V19..V34 = graphics stack
+#   (pthread shim, graphics HIDL, logd, binder FDA, gralloc ION, HWC, FBIOPAN).
+# * The CURRENT work (phase 6: framework boot, HALs, WiFi) is in
+#   results/phase-6/ARTIFACTS.sha256. V35..V54 and the current status are there.
+# * All the .tar.md5 live in sm-t280-phase5/packages/ (build tooling; inherited
+#   name). Final phase 5 boot = V31 (8e11eb52, binder FDA kernel).
+
+# --- Final phase 5 candidate: V34 (V29 ION alloc + FBIOPAN after memcpy in fb_post) ---
+# V33 confirmed that the page-flip gives real -ENOMEM (V29 needed) and that the "frozen logo"
+# was the memcpy branch of fb_post without FBIOPAN -> the DPI panel did not latch the new frame.
+# V34 adds FBIOPAN_DISPLAY after the memcpy. boot = V31 (8e11eb52); only system changes (gralloc).
+29fed506e552ad1f03ce69773ec95cf1a4ee8b4b947f94d5a409f958cec69882 *sm-t280-phase5/packages/SM-T280-android10-fbpan-PHASE5-v34-DO-NOT-FLASH.tar.md5
+
+## History: V33 pageflip (discarded), V32 gralloc-usage2, V31 binder-fda (boot 8e11eb52), V19-V23
+3e6f16ace3b3e01bb99f962a81bcd3bf14c9485f34770710b5214e97742e6f66 *sm-t280-phase5/packages/SM-T280-android10-pageflip-PHASE5-v33-DO-NOT-FLASH.tar.md5
+37c30f21eff264b209c5de813b0958300c4504aad8c337e4ac65fdd7646e95d6 *sm-t280-phase5/packages/SM-T280-android10-gralloc-usage2-PHASE5-v32-DO-NOT-FLASH.tar.md5
+630b3c8c40818a7236cf14d6ec7279d86a5b5bf60510ac4adf76dc9dc7cb572e *sm-t280-phase5/packages/SM-T280-android10-logd-root-PHASE5-v23-DO-NOT-FLASH.tar.md5
+bf42fccd01ddf8bc20a18dbf10035b0318981c84228765b9b648653bf0a10c0e *sm-t280-phase5/packages/SM-T280-android10-logd-caps-PHASE5-v22-DO-NOT-FLASH.tar.md5
+553619c040d8e7f42c3c234dfdf8c6685269850994c97999328155e6db896411 *sm-t280-phase5/packages/SM-T280-android10-adb-diag-PHASE5-v21-DO-NOT-FLASH.tar.md5
+1c7e442f3fd2b70a77520dbd0059a78511d11056be189617f41a5a4614c7e753 *sm-t280-phase5/packages/SM-T280-android10-graphics-hidl-PHASE5-v20-DO-NOT-FLASH.tar.md5
+ffd889a16f7be31e2407c61b0957b218d4cd38ca15e206cdbe7edf974167feb4 *sm-t280-phase5/packages/SM-T280-android10-pthread-shim-PHASE5-v19-DO-NOT-FLASH.tar.md5
+
+## Stock rescue (boot+system, tested PASS + correct boot)
+f6392498a7baf5f482d2b80a0fe8b1cf357d106300a9b3afed0c893f4bba31a6 *sm-t280-phase5/packages/SM-T280-AQJ1-STOCK-BOOT-SYSTEM-ONLY-RESTORE.tar.md5
+
+## V34 components (payload)
+8e11eb52af6151e27b5c9c48fec83809a270b4095ede8656a2c0ed219f99832c  boot.img (= V31, binder FDA kernel, -> KERNEL)
+187bfa718d7ae423fdbe15d7b23e4c4ca27cd74b5691e07918360e4c6d5ad411  system.img legacy-sparse (V29 ION + V34 FBIOPAN, -> SYSTEM)

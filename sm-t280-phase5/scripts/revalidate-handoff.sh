@@ -14,7 +14,7 @@ expected='998da11be181f9e7d90eee3c741fb18134b0f9eb30c4df2eb0a18343848b189d'
 actual=$(sha256sum sm-t280-phase5/packages/SM-T280-system-android10-PHASE5-v1-DO-NOT-FLASH.tar.md5 | awk '{print $1}')
 test "$actual" = "$expected"
 
-grep 'tar.md5' results/fase-5/ARTIFACTS.sha256 | sha256sum -c -
+grep 'tar.md5' results/phase-5/ARTIFACTS.sha256 | sha256sum -c -
 tar --list --file sm-t280-phase5/packages/SM-T280-system-android10-PHASE5-v1-DO-NOT-FLASH.tar.md5 \
   | sed '/^$/d'
 

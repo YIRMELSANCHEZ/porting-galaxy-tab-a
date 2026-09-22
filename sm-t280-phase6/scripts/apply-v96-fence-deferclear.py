@@ -31,7 +31,7 @@ def rep(s, old, new, count=1):
         raise RuntimeError(f"anchor x{s.count(old)} != {count}: {old[:60]!r}")
     return s.replace(old, new)
 
-# ---------------------------------------------------------------- fase 0: contadores extra
+# ---------------------------------------------------------------- phase 0: contadores extra
 def v95stats_hpp(s):
     return rep(s, "extern long v95_draws, v95_waits, v95_wait_us, v95_syncs, v95_sync_us, v95_clears, v95_clear_us;\n",
                "extern long v95_draws, v95_waits, v95_wait_us, v95_syncs, v95_sync_us, v95_clears, v95_clear_us;\n"
@@ -90,7 +90,7 @@ def libglesv2_cpp(s):
         s = pat.sub(lambda m: m.group(1) + '\tsw::V95Tag v95tag("%s");\n' % name, s, count=1)
     return s
 
-# ---------------------------------------------------------------- fases 1 y 2: Renderer
+# ---------------------------------------------------------------- phases 1 and 2: Renderer
 def renderer_hpp(s):
     s = rep(s, "#include <list>\n", "#include <list>\n#include <set>   // V96\n") if "#include <list>\n" in s else s
     if "#include <set>" not in s:
@@ -512,7 +512,7 @@ def renderer_cpp(s):
     s = rep(s, "\tvoid Renderer::synchronize()\n\t{\n", new_fns + "\tvoid Renderer::synchronize()\n\t{\n")
     return s
 
-# ---------------------------------------------------------------- fase 2: es2::Device usa clears diferidos
+# ---------------------------------------------------------------- phase 2: es2::Device usa clears diferidos
 def device_hpp(s):
     return rep(s, "\t\tsw::Rect scissorRect;\n\t\tbool scissorEnable;\n",
                "\t\tsw::Rect scissorRect;\n\t\tbool scissorEnable;\n\t\tbool deferClears;   // V96\n")
@@ -587,7 +587,7 @@ def device_cpp(s):
     s = rep(s, old_s, new_s)
     return s
 
-# ---------------------------------------------------------------- fase 1: interfaz egl::Context + es2::Context + libEGL
+# ---------------------------------------------------------------- phase 1: interfaz egl::Context + es2::Context + libEGL
 def eglcontext_hpp(s):
     return rep(s, "\tvirtual void blit(sw::Surface *source, const sw::SliceRect &sRect, sw::Surface *dest, const sw::SliceRect &dRect) = 0;\n",
                "\tvirtual void blit(sw::Surface *source, const sw::SliceRect &sRect, sw::Surface *dest, const sw::SliceRect &dRect) = 0;\n\n"

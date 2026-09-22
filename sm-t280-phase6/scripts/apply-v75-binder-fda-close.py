@@ -2,7 +2,7 @@
 # V75 (G1 / GFX-ION: leak of fds and ION memory in every process that receives handles via HIDL).
 # On top of V74. Changes the KERNEL (drivers/staging/android/binder.c) -> boot.img.
 #
-# CAUSE (measured on HW, see results/fase-6/G1-FINDINGS.md):
+# CAUSE (measured on HW, see results/phase-6/G1-FINDINGS.md):
 #   - composer@2.1-service: +3 sync_fence fds per frame (mali_flag_fence = acquire fences of the
 #     layers) and it retains the imported buffer handles -> the ION system heap grows without limit
 #     (513 MB "orphaned" at 25 min; on restarting the composer it drops to 80 MB).

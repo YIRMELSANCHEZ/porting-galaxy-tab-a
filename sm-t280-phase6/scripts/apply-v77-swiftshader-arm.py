@@ -5,7 +5,7 @@
 # eglGetPlatformDisplay returns EGL_BAD_PARAMETER on Android (the framework libEGL uses it when
 # it loads a driver via the "ANGLE" path).
 #
-# CONTEXT (results/fase-6/TODO-ANALYSIS.md, APP section): "an app that requires GLES 3.0" requires
+# CONTEXT (results/phase-6/TODO-ANALYSIS.md, APP section): "an app that requires GLES 3.0" requires
 # <uses-feature glEsVersion=0x30000> (demonstrated with spoof profiles in Aurora); the SM-T280's Mali-400 is
 # GLES 2.0. Plan: an "ANGLE" system package with libEGL_angle.so/libGLESv2_angle.so
 # = renamed SwiftShader, enabled ONLY for that app via Settings.Global

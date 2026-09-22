@@ -9,7 +9,7 @@ product="$root/out/target/product/gtexswifi"
 sparse="$product/system.img"
 boot="$product/boot.img"
 simg2img="$root/out/host/linux-x86/bin/simg2img"
-raw="$workspace/results/fase-5/system-raw-odin-v2.img"
+raw="$workspace/results/phase-5/system-raw-odin-v2.img"
 package="$workspace/sm-t280-phase5/packages/SM-T280-system-android10-rawext4-PHASE5-v2-DO-NOT-FLASH.tar.md5"
 
 test -x "$simg2img"
@@ -25,7 +25,7 @@ test "$raw_size" -eq 2147483648
 bash "$workspace/sm-t280-phase5/scripts/package-system-for-odin.sh" \
   "$boot" "$raw" "$package"
 
-tar --list --file "$package" | sed '/^$/d' > "$workspace/results/fase-5/RAW-SYSTEM-V2-TAR-CONTENTS.txt"
-test "$(cat "$workspace/results/fase-5/RAW-SYSTEM-V2-TAR-CONTENTS.txt")" = $'boot.img\nsystem.img'
+tar --list --file "$package" | sed '/^$/d' > "$workspace/results/phase-5/RAW-SYSTEM-V2-TAR-CONTENTS.txt"
+test "$(cat "$workspace/results/phase-5/RAW-SYSTEM-V2-TAR-CONTENTS.txt")" = $'boot.img\nsystem.img'
 
 printf 'RAW_SYSTEM_ODIN_CANDIDATE_PASS\n'

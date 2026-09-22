@@ -36,7 +36,7 @@ sm-t280-phase*/raw/
 # They hold device MACs/serials and home-network data, so they are excluded from this public repo.
 results/**/*.txt
 !results/**/*-TAR-CONTENTS.txt
-results/fase-4/kernel-audit/
+results/phase-4/kernel-audit/
 
 # --- cloned source trees (kernel, vendor, etc.) ---
 sm-t280-phase*/sources/

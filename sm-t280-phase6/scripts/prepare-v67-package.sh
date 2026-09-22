@@ -7,7 +7,7 @@ product="$root/out/target/product/gtexswifi"
 boot="$product/boot.img"
 source_system="$product/system.img"
 adapter="$product/system/vendor/lib/libhwc2onfbadapter.so"
-converted="$workspace/results/fase-6/system-legacy-sparse-odin-v67.img"
+converted="$workspace/results/phase-6/system-legacy-sparse-odin-v67.img"
 package="$workspace/sm-t280-phase6/packages/SM-T280-android10-fb-adapter-power-PHASE6-v67-DO-NOT-FLASH.tar.md5"
 
 grep -aFq 'V67 fb_blank cancelling pending legacy suspend' "$product/kernel"

@@ -21,7 +21,7 @@ grep -q 'net_bt_stack' "$OUT/system/etc/init/wcnd.rc" && { echo "V72_STAGING_FAI
 echo "V72_STAGING_OK"
 
 echo "=== package ==="
-python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/fase-5/system-legacy-sparse-odin-v72.img"
+python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/phase-5/system-legacy-sparse-odin-v72.img"
 bash "$S/package-system-for-odin.sh" "$OUT/boot.img" \
-  "$WIN/results/fase-5/system-legacy-sparse-odin-v72.img" \
+  "$WIN/results/phase-5/system-legacy-sparse-odin-v72.img" \
   "$WIN/sm-t280-phase6/packages/SM-T280-android10-bt-wcnd-root-PHASE6-v72-DO-NOT-FLASH.tar.md5"

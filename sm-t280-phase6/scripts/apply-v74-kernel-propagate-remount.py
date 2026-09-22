@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # V74 (STOR1: apps cannot read /sdcard). On top of V73. Changes the KERNEL (fs/pnode.c) -> boot.img.
 #
-# CAUSE (verified on HW, factory configuration, see results/fase-6/STOR1-FINDINGS.md):
+# CAUSE (verified on HW, factory configuration, see results/phase-6/STOR1-FINDINGS.md):
 #   vold/sdcard creates the storage views as bind-mounts of the default view and then
 #   applies per-mount options to them with remount: read=(gid 9997,mask 0027) write/full=(gid 9997,mask 0007).
 #   The remount only updates the remounted vfsmount; the COPIES propagated to other namespaces are

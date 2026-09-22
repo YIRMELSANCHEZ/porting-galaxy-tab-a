@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # V76 (G1: display capped at ~8 fps). On top of V75 (kernel). Changes gralloc.sc8830 (scx30g_v2) -> system.img.
 #
-# CAUSE (see results/fase-6/G1-FINDINGS.md):
+# CAUSE (see results/phase-6/G1-FINDINGS.md):
 #   V29 forces every HW_FB buffer (SurfaceFlinger's 3 FramebufferSurface = "FB target",
 #   the GPU composition output) to be a normal ION buffer instead of a framebuffer slot,
 #   so fb_post() in the composer always takes the memcpy branch: it copies 800x1280x4 = 4 MB per

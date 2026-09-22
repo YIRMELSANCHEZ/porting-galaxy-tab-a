@@ -22,7 +22,7 @@ lunch lineage_gtexswifi-userdebug >/dev/null
 
 echo "=== 1) linker (V92b) + camera ==="
 mka linker android.hardware.camera.provider@2.4-service android.hardware.camera.provider@2.4-impl libcamera_shim 2>&1 | grep -E 'error:|FAILED|build completed' | tail -8 | tee /tmp/v92-a.log
-grep -q 'build completed' /tmp/v92-a.log || { echo 'V92_FAIL: fase 1'; exit 1; }
+grep -q 'build completed' /tmp/v92-a.log || { echo 'V92_FAIL: phase 1'; exit 1; }
 
 echo "=== 2) system.img ==="
 mka systemimage 2>&1 | grep -vE '^\[ *[0-9]+% ' | grep -E 'error:|FAILED|build completed' | tail -8 | tee /tmp/v92-b.log
@@ -44,8 +44,8 @@ grep -q '^    user system' "$OUT/system/etc/init/wcnd.rc" && { echo 'V72_REGRESS
 echo 'V92_STATIC_VERIFY_PASS'
 
 echo "=== 4) Odin package ==="
-python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/fase-5/system-legacy-sparse-odin-v92.img"
-bash "$S/package-system-for-odin.sh" "$OUT/boot.img" "$WIN/results/fase-5/system-legacy-sparse-odin-v92.img" "$ODIN"
+python3 "$S/legacy_sparse.py" "$OUT/system.img" "$WIN/results/phase-5/system-legacy-sparse-odin-v92.img"
+bash "$S/package-system-for-odin.sh" "$OUT/boot.img" "$WIN/results/phase-5/system-legacy-sparse-odin-v92.img" "$ODIN"
 bash "$S/verify-odin-boot-system-package.sh" "$ODIN"
 sha256sum "$OUT/boot.img" "$OUT/system.img" "$ODIN"
 echo 'V92_BUILD_AND_PACKAGE_PASS'

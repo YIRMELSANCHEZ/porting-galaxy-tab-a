@@ -1,7 +1,7 @@
 param([string]$Label = "diag")   # uso: .\diag-device.ps1 v44
 
 $ADB  = "C:\Dev\Experiments\porting-galaxy-tab-a\sm-t280-phase1\tools\platform-tools\adb.exe"
-$Root = "C:\Dev\Experiments\porting-galaxy-tab-a\results\fase-6"
+$Root = "C:\Dev\Experiments\porting-galaxy-tab-a\results\phase-6"
 $Stamp = Get-Date -Format "yyyyMMdd-HHmmss"
 $Out  = Join-Path $Root ("diag-{0}-{1}" -f $Label, $Stamp)
 New-Item -ItemType Directory -Force -Path $Out | Out-Null

@@ -6,7 +6,7 @@ workspace=${2:?Usage: prepare-v68-package.sh ANDROID_ROOT WORKSPACE}
 product="$root/out/target/product/gtexswifi"
 boot="$product/boot.img"
 source_system="$product/system.img"
-converted="$workspace/results/fase-6/system-legacy-sparse-odin-v68.img"
+converted="$workspace/results/phase-6/system-legacy-sparse-odin-v68.img"
 package="$workspace/sm-t280-phase6/packages/SM-T280-android10-consolidated-PHASE6-v68-DO-NOT-FLASH.tar.md5"
 
 # Refuse packaging unless every consolidated build output is present.

@@ -31,7 +31,7 @@ new = (
     "        restorecon_recursive /data/security\n"
     "    # ]\n"
     "\n"
-    "    # V35 (fase 6.1): /data unencrypted (formattable) no dispara el evento crypto\n"
+    "    # V35 (phase 6.1): /data unencrypted (formattable) no dispara el evento crypto\n"
     "    # de mount_all -> ro.crypto.state queda vacio y el framework no auto-arranca.\n"
     "    # Forzarlo aqui, con /data ya listo (tras vold.post_fs_data_done).\n"
     "    setprop ro.crypto.state unencrypted\n"

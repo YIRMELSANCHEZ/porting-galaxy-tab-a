@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# V98: camera. Two causes measured live on 2026-09-21 on top of V95 (see results/fase-6/CAMERA-V98.md):
+# V98: camera. Two causes measured live on 2026-09-21 on top of V95 (see results/phase-6/CAMERA-V98.md):
 #  1) Android 10's linker no longer understands LD_SHIM_LIBS, so the V92 shim was never loaded and
 #     camera.sc8830.so failed on dlopen ("cannot locate symbol android_atomic_or"). LD_PRELOAD does work
 #     (tested by hand): the rc switches to using it.
